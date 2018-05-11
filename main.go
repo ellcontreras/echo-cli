@@ -69,5 +69,10 @@ func main() {
 
 		fRoutes := FileParse{"Routes folder and file", *newApp, "routes/", "Routes", "RoutesFile"}
 		fRoutes.Parse()
+
+		fUtils := FileParse{"Util function such as checkErr", *newApp, "utils/", "utils", "UtilsFile"}
+		fUtils.Parse()
+
+		f
 	}
 }

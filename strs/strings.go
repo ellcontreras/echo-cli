@@ -65,6 +65,16 @@ func InitRoutes(server *echo.Echo) {
 	server.PUT("/api/home/put", actions.HomePut)
 	server.DELETE("/api/home/delete", actions.HomeDelete)
 }`
+	UtilsFile string = `package utils
+
+import "log"
+
+// CheckErr verify if exists an error in the var err
+func CheckErr(err error, msg string) {
+	if err != nil {
+		log.Println(err, msg)
+	}
+}`
 )
 
 func GetVar(name string) string {
@@ -75,6 +85,8 @@ func GetVar(name string) string {
 			return HomeActions
 		case "RoutesFile":
 			return RoutesFile
+		case "UtilsFile":
+			return UtilsFile
 	}
 	return ""
 }
