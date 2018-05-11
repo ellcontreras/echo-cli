@@ -20,7 +20,6 @@ type FileParse struct {
 
 func (f *FileParse) Parse(){
 	strParse := strings.Replace(strs.GetVar(f.strName), "appName", f.appName,-1)
-	log.Print(strParse)
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
@@ -73,6 +72,7 @@ func main() {
 		fUtils := FileParse{"Util function such as checkErr", *newApp, "utils/", "utils", "UtilsFile"}
 		fUtils.Parse()
 
-		f
+		fDB := FileParse{"DB open", *newApp, "db/", "db", "DBFile"}
+		fDB.Parse()
 	}
 }

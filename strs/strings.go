@@ -20,6 +20,10 @@ func main() {
 	//Init the routes
 	routes.InitRoutes(Server)
 
+	//Make migrations
+	//db := DB.Open()
+	//db.AutoMigrate(&models.Product{})
+
 	Server.Logger.Fatal(Server.Start(":8080"))
 }`
 
@@ -75,6 +79,28 @@ func CheckErr(err error, msg string) {
 		log.Println(err, msg)
 	}
 }`
+
+	DBFile string = `package DB
+
+import (
+	"appName/utils"
+
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+)
+
+var (
+	db  *gorm.DB
+	err error
+)
+
+//Open return a dastabase instance
+func Open() *gorm.DB {
+	db, err = gorm.Open("mysql", "root:root@/appName")
+	utils.CheckErr(err, "No se puede abrir una conexión")
+
+	return db
+}`
 )
 
 func GetVar(name string) string {
@@ -87,6 +113,8 @@ func GetVar(name string) string {
 			return RoutesFile
 		case "UtilsFile":
 			return UtilsFile
+		case "DBFile":
+			return DBFile
 	}
 	return ""
 }
