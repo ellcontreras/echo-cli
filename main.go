@@ -61,10 +61,13 @@ func main() {
 	flag.Parse()
 
 	if checkNull(newApp) {
-		fMain := FileParse{"", *newApp, "","main", "MainFile"}
+		fMain := FileParse{"Main File", *newApp, "","main", "MainFile"}
 		fMain.Parse()
 
-		fActions := FileParse{"", *newApp, "actions/", "HomeActions", "HomeActions"}
+		fActions := FileParse{"Actions folder and file", *newApp, "actions/", "HomeActions", "HomeActionsFile"}
 		fActions.Parse()
+
+		fRoutes := FileParse{"Routes folder and file", *newApp, "routes/", "Routes", "RoutesFile"}
+		fRoutes.Parse()
 	}
 }

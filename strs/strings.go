@@ -23,19 +23,6 @@ func main() {
 	Server.Logger.Fatal(Server.Start(":8080"))
 }`
 
-	RoutesFile string = `package routes
-
-import (
-	"appName/actions"
-
-	"github.com/labstack/echo"
-)
-
-//InitRoutes the routes for the server
-func InitRoutes(server *echo.Echo) {
-	//Routes...
-}`
-
 	HomeActions string = `package actions
 
 import (
@@ -62,13 +49,32 @@ func HomePut(ctx echo.Context) error {
 func HomeDelete(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, "Delete Method")
 }`
+	RoutesFile string = `package routes
+
+import (
+	"appName/actions"
+
+	"github.com/labstack/echo"
+)
+
+//InitRoutes the routes for the server
+func InitRoutes(server *echo.Echo) {
+	//User routes
+	server.GET("/api/home/get", actions.HomeGet)
+	server.POST("/api/home/post", actions.HomePost)
+	server.PUT("/api/home/put", actions.HomePut)
+	server.DELETE("/api/home/delete", actions.HomeDelete)
+}`
 )
 
 func GetVar(name string) string {
 	switch name {
 		case "MainFile":
-			return name
-		case "HomeActions":
+			return MainFile
+		case "HomeActionsFile":
 			return HomeActions
+		case "RoutesFile":
+			return RoutesFile
 	}
+	return ""
 }
