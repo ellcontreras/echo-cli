@@ -25,10 +25,11 @@ func (f *FileParse) Parse(){
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if checkNil(f.subFolder) {
-		err := ioutil.WriteFile(f.appName+"/" + f.fileName + ".go", d1, 0644)
+		os.MkdirAll(f.appName + "/" + f.subFolder, os.ModePerm)
+		err := ioutil.WriteFile(f.appName+"/" + f.subFolder + f.fileName + ".go", d1, 0644)
 		checkErr(err)
 	} else {
-		err := ioutil.WriteFile(f.appName+"/" + f.subFolder + f.fileName + ".go", d1, 0644)
+		err := ioutil.WriteFile(f.appName+"/" + f.fileName + ".go", d1, 0644)
 		checkErr(err)
 	}
 }

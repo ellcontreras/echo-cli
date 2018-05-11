@@ -65,13 +65,10 @@ func HomeDelete(ctx echo.Context) error {
 )
 
 func GetVar(name string) string {
-	//switch name {
-	//	case "MainFile":
-	//		return name
-	//		break
-	//	case "HomeActions":
-	//		return HomeActions
-	//		break
-	//}
-	return name
+	switch name {
+		case "MainFile":
+			return name
+		case "HomeActions":
+			return HomeActions
+	}
 }
