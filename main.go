@@ -8,6 +8,7 @@ import (
 	"strings"
 	"os"
 	"echo-cli/strs"
+	"echo-cli/utils"
 )
 
 type FileParse struct {
@@ -25,31 +26,14 @@ func (f *FileParse) Parse(){
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
-	if checkNil(f.subFolder) {
+	if utils.CheckNil(f.subFolder) {
 		os.MkdirAll(f.appName + "/" + f.subFolder, os.ModePerm)
 		err := ioutil.WriteFile(f.appName+"/" + f.subFolder + f.fileName + ".go", d1, 0644)
-		checkErr(err)
+		utils.CheckErr(err)
 	} else {
 		err := ioutil.WriteFile(f.appName+"/" + f.fileName + ".go", d1, 0644)
-		checkErr(err)
+		utils.CheckErr(err)
 	}
-}
-
-//checkErr check if exists an error in the param err
-func checkErr(err error) {
-	if err != nil {
-		log.Println("Error:", err)
-	}
-}
-
-//checkNull check if a string is null or not
-func checkNull(newApp *string) bool {
-	return *newApp == ""
-}
-
-//checkNil check if non pointer of a string is null
-func checkNil(a string) bool {
-	return a == ""
 }
 
 func main() {
@@ -62,7 +46,7 @@ func main() {
 	flag.PrintDefaults()
 	flag.Parse()
 
-	if checkNull(newApp) {
+	if utils.CheckNull(newApp) {
 		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
 		fMain.Parse()
 
