@@ -38,6 +38,8 @@ func main() {
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
 	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
 
+	flag.Parse()
+
 	if !utils.CheckNull(newApp) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
@@ -47,8 +49,6 @@ func main() {
 	} else {
 		fmt.Println("Generando proyecto", *newApp)
 	}
-
-	flag.Parse()
 
 	if utils.CheckNull(newApp) {
 		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
