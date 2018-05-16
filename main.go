@@ -42,11 +42,17 @@ func main() {
 	fmt.Println("\tExample: -new=polls\n ")
 
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
+	//example := flag.String("example", "", "")
 	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
+
 	flag.PrintDefaults()
 	flag.Parse()
 
+	println("Vlue of new", *newApp)
+
 	if utils.CheckNull(newApp) {
+		log.Println("Funciona")
+
 		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
 		fMain.Parse()
 
