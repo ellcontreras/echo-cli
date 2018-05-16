@@ -42,7 +42,6 @@ func checkErr(err error) {
 
 //checkNull check if a string is null or not
 func checkNull(newApp *string) bool {
-	log.Print(*newApp != "")
 	return *newApp == ""
 }
 
@@ -53,10 +52,12 @@ func checkNil(a string) bool {
 
 func main() {
 	fmt.Println("Echo Framework CLI")
+	fmt.Println("\n\tUsage: -<command>=<value>")
+	fmt.Println("\tExample: -new=polls\n ")
 
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
 	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
-	//flag.PrintDefaults()
+	flag.PrintDefaults()
 	flag.Parse()
 
 	if checkNull(newApp) {
