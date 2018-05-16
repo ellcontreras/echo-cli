@@ -3,11 +3,11 @@ package main
 import (
 	"github.com/Obsinqsob01/echo-cli/strs"
 	"github.com/Obsinqsob01/echo-cli/utils"
-	"fmt"
 	"flag"
 	"io/ioutil"
 	"os"
 	"strings"
+	"fmt"
 )
 
 type FileParse struct {
@@ -35,14 +35,19 @@ func (f *FileParse) Parse() {
 }
 
 func main() {
-	fmt.Println("Echo Framework CLI")
-	fmt.Println("\n\tUsage: -<command>=<value>")
-	fmt.Println("\tExample: -new=polls\n ")
-
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
 	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
 
-	flag.PrintDefaults()
+	if !utils.CheckNull(newApp) {
+		fmt.Println("Echo Framework CLI")
+		fmt.Println("\n\tUsage: -<command>=<value>")
+		fmt.Println("\tExample: -new=polls\n ")
+
+		flag.PrintDefaults()
+	} else {
+		fmt.Println("Generando proyecto", *newApp)
+	}
+
 	flag.Parse()
 
 	if utils.CheckNull(newApp) {
