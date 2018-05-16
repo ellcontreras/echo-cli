@@ -21,7 +21,7 @@ type FileParse struct {
 func (f *FileParse) Parse() {
 	path := f.subFolder+f.fileName + ".go"
 
-	fmt.Println("Creando...", path)
+	fmt.Println("\tCreando...", path)
 
 	strParse := strings.Replace(strs.Paths[path], "appName", f.appName,-1)
 	d1 := []byte(strParse)
