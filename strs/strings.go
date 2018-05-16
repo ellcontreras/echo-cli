@@ -105,7 +105,7 @@ func Open() *gorm.DB {
 
 var Paths map[string]string = make(map[string]string)
 
-func Init(){
+func Init() {
 	//Main File
 	Paths["main.go"] = MainFile
 	//Routes
