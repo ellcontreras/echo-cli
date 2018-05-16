@@ -42,21 +42,21 @@ func checkErr(err error) {
 
 //checkNull check if a string is null or not
 func checkNull(newApp *string) bool {
-	log.Print("Value:", *newApp)
-	return *newApp != "" || *newApp != " "
+	log.Print(*newApp != "")
+	return *newApp == ""
 }
 
 //checkNil check if non pointer of a string is null
 func checkNil(a string) bool {
-	return a != "" || a != " "
+	return a == ""
 }
 
 func main() {
-	fmt.Println("Echo Framework CLI\n")
+	fmt.Println("Echo Framework CLI")
 
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
 	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
-
+	//flag.PrintDefaults()
 	flag.Parse()
 
 	if checkNull(newApp) {
