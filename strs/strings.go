@@ -103,18 +103,17 @@ func Open() *gorm.DB {
 }`
 )
 
-func GetVar(name string) string {
-	switch name {
-		case "MainFile":
-			return MainFile
-		case "HomeActionsFile":
-			return HomeActions
-		case "RoutesFile":
-			return RoutesFile
-		case "UtilsFile":
-			return UtilsFile
-		case "DBFile":
-			return DBFile
-	}
-	return ""
+var Paths map[string]string = make(map[string]string)
+
+func Init(){
+	//Main File
+	Paths["main.go"] = MainFile
+	//Routes
+	Paths["routes/Routes.go"] = RoutesFile
+	//Controller
+	Paths["actions/HomeActions.go"] = HomeActions
+	//Utils
+	Paths["utils/utils.go"] = UtilsFile
+	//DB
+	Paths["db/db.go"] = DBFile
 }

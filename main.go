@@ -19,7 +19,9 @@ type FileParse struct {
 }
 
 func (f *FileParse) Parse(){
-	strParse := strings.Replace(strs.GetVar(f.strName), "appName", f.appName,-1)
+	path := f.subFolder+f.fileName + ".go"
+	log.Println(path)
+	strParse := strings.Replace(strs.Paths[path], "appName", f.appName,-1)
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
@@ -61,7 +63,7 @@ func main() {
 	flag.Parse()
 
 	if checkNull(newApp) {
-		fMain := FileParse{"Main File", *newApp, "","main", "MainFile"}
+		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
 		fMain.Parse()
 
 		fActions := FileParse{"Actions folder and file", *newApp, "actions/", "HomeActions", "HomeActionsFile"}
