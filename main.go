@@ -1,36 +1,42 @@
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
-	"strings"
 	"os"
-	"echo-cli/strs"
+	"strings"
+
+	"github.com/Obsinqsob01/echo-cli/strs"
 )
 
 type FileParse struct {
-	name		string
-	appName		string
-	subFolder	string
-	fileName	string
-	strName		string
+	name      string
+	appName   string
+	subFolder string
+	fileName  string
+	strName   string
 }
 
+<<<<<<< HEAD
 func (f *FileParse) Parse(){
 	path := f.subFolder+f.fileName + ".go"
 	log.Println(path)
 	strParse := strings.Replace(strs.Paths[path], "appName", f.appName,-1)
+=======
+func (f *FileParse) Parse() {
+	strParse := strings.Replace(strs.GetVar(f.strName), "appName", f.appName, -1)
+>>>>>>> 155eb5a45270357ae6d1fe2e69c42e1924a74f68
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if checkNil(f.subFolder) {
-		os.MkdirAll(f.appName + "/" + f.subFolder, os.ModePerm)
-		err := ioutil.WriteFile(f.appName+"/" + f.subFolder + f.fileName + ".go", d1, 0644)
+		os.MkdirAll(f.appName+"/"+f.subFolder, os.ModePerm)
+		err := ioutil.WriteFile(f.appName+"/"+f.subFolder+f.fileName+".go", d1, 0644)
 		checkErr(err)
 	} else {
-		err := ioutil.WriteFile(f.appName+"/" + f.fileName + ".go", d1, 0644)
+		err := ioutil.WriteFile(f.appName+"/"+f.fileName+".go", d1, 0644)
 		checkErr(err)
 	}
 }
