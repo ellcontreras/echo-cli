@@ -101,6 +101,33 @@ func Open() *gorm.DB {
 
 	return db
 }`
+	Action = `package actions
+
+import (
+	"net/http"
+	"github.com/labstack/echo"
+)
+
+//appNameGet ...
+func appNameGet(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, "Get Method")
+}
+
+//appNamePost ...
+func appNamePost(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, "Post Method")
+}
+
+//appNamePut ...
+func appNamePut(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, "Put Method")
+}
+
+//Delete ...
+func appNameDelete(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, "Delete Method")
+}
+	`
 )
 
 var Paths map[string]string = make(map[string]string)
@@ -116,4 +143,6 @@ func Init() {
 	Paths["utils/utils.go"] = UtilsFile
 	//DB
 	Paths["db/db.go"] = DBFile
+	//Actions
+	Paths["actions/action.go"] = Action
 }
