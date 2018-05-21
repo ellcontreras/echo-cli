@@ -11,10 +11,10 @@ func CheckErr(err error) {
 
 //CheckNull check if a string is null or not
 func CheckNull(newApp *string) bool {
-	return *newApp != ""
+	return len(*newApp) > 0 && *newApp != ""
 }
 
 //CheckNil check if non pointer of a string is null
 func CheckNil(a string) bool {
-	return a != ""
+	return len(a) > 0 && a != ""
 }

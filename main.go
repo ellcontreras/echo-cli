@@ -8,6 +8,8 @@ import (
 	"os"
 	"strings"
 	"fmt"
+	"io"
+	"bufio"
 )
 
 type FileParse struct {
@@ -38,8 +40,11 @@ func (f *FileParse) Parse() {
 }
 
 func main() {
+	stream := io.Reader(os.Stdin)
+	reader := bufio.NewReader(stream)
+
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
-	//generate := flag.String("generate", "", "Generate something such as controller, model, route")
+	generate := flag.String("generate", "action", "Generate something such as action, controller, model, route")
 
 	flag.Parse()
 
@@ -68,5 +73,17 @@ func main() {
 
 		fDB := FileParse{"DB open", *newApp, "db/", "db", "DBFile"}
 		fDB.Parse()
+	}
+
+	if utils.CheckNull(generate) {
+		switch *generate {
+			case "action":
+				fmt.Println("Escribe el nombre del action: ")
+				name, err := reader.ReadString('\n')
+				utils.CheckErr(err)
+
+				af := FileParse{"Action", name, "actions/", name, "Action"}
+				af.Parse()
+		}
 	}
 }
