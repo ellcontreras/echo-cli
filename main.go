@@ -43,12 +43,19 @@ func main() {
 	stream := io.Reader(os.Stdin)
 	reader := bufio.NewReader(stream)
 
+<<<<<<< HEAD
 	newApp := flag.String("new", "nameApp", "Generate de folder structure of an app")
 	generate := flag.String("generate", "action", "Generate something such as action, controller, model, route")
+=======
+	newApp := flag.String("new", "", "Generate de folder structure of an app")
+	generate := flag.String("generate", "", "Generate something such as action, controller, model, route")
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
 
 	flag.Parse()
 
-	if !utils.CheckNull(newApp) {
+	fmt.Println(*newApp, *generate)
+
+	if utils.CheckNil(*newApp) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
 		fmt.Println("\tExample: -new=polls\n ")
@@ -58,7 +65,7 @@ func main() {
 		fmt.Println("Generando proyecto", *newApp)
 	}
 
-	if utils.CheckNull(newApp) {
+	if !utils.CheckNil(*newApp) {
 		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
 		fMain.Parse()
 
@@ -75,6 +82,7 @@ func main() {
 		fDB.Parse()
 	}
 
+<<<<<<< HEAD
 	if utils.CheckNull(generate) {
 		switch *generate {
 			case "action":
@@ -84,6 +92,18 @@ func main() {
 
 				af := FileParse{"Action", name, "actions/", name, "Action"}
 				af.Parse()
+=======
+	if !utils.CheckNil(*generate) {
+		switch *generate {
+		case "action":
+			fmt.Println("Escribe el nombre del action: ")
+			name, err := reader.ReadString('\n')
+			utils.CheckErr(err)
+
+			af := FileParse{"Action", name, "actions/", name, "Action"}
+			af.Parse()
+			break
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
 		}
 	}
 }

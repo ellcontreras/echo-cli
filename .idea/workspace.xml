@@ -19,8 +19,13 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="304">
               <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+=======
+            <state relative-caret-position="755">
+              <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
             </state>
           </provider>
         </entry>
@@ -28,8 +33,13 @@
       <file leaf-file-name="utils.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/utils.go">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="287">
               <caret line="7" column="21" lean-forward="true" selection-end-line="20" />
+=======
+            <state relative-caret-position="636">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
             </state>
           </provider>
         </entry>
@@ -37,8 +47,13 @@
       <file leaf-file-name="strings.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strs/strings.go">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="712">
               <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+=======
+            <state relative-caret-position="823">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
             </state>
           </provider>
         </entry>
@@ -67,6 +82,7 @@
         <option value="$PROJECT_DIR$/strings.go" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/strs/strings.go" />
+        <option value="$PROJECT_DIR$/utils/utils.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/utils/utils.go" />
       </list>
@@ -92,30 +108,12 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="echo-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="echo-cli" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="echo-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="echo-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="strs" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../echo-cli/strs/strings.go" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -158,12 +156,21 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Version Control" order="9" />
+=======
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="7" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -172,6 +179,29 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+<<<<<<< HEAD
+=======
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16354166" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -187,7 +217,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="552">
+=======
+        <state relative-caret-position="368">
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
@@ -298,24 +332,55 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/strs/strings.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="712">
           <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
+=======
+    <entry file="file://$PROJECT_DIR$/../../../echo-cli/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="29" column="39" lean-forward="true" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../echo-cli/strs/strings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" lean-forward="true" selection-end-line="148" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/utils.go">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="287">
           <caret line="7" column="21" lean-forward="true" selection-end-line="20" />
+=======
+        <state relative-caret-position="823">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="304">
           <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+=======
+        <state relative-caret-position="755">
+          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+>>>>>>> 15d7c53f62fd6f82c9fd105b3d417c0e95038f43
         </state>
       </provider>
     </entry>
