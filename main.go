@@ -1,40 +1,41 @@
 package main
 
 import (
-	"github.com/Obsinqsob01/echo-cli/strs"
-	"github.com/Obsinqsob01/echo-cli/utils"
+	"bufio"
 	"flag"
+	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"strings"
-	"fmt"
-	"io"
-	"bufio"
+
+	"github.com/Obsinqsob01/echo-cli/strs"
+	"github.com/Obsinqsob01/echo-cli/utils"
 )
 
 type FileParse struct {
-	name		string
-	appName		string
-	subFolder	string
-	fileName	string
-	strName		string
+	name      string
+	appName   string
+	subFolder string
+	fileName  string
+	strName   string
 }
 
 func (f *FileParse) Parse() {
-	path := f.subFolder+f.fileName + ".go"
+	path := f.subFolder + f.fileName + ".go"
 
 	fmt.Println("\tCreando...", path)
 
-	strParse := strings.Replace(strs.Paths[path], "appName", f.appName,-1)
+	strParse := strings.Replace(strs.Paths[path], "appName", f.appName, -1)
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if utils.CheckNil(f.subFolder) {
-		os.MkdirAll(f.appName + "/" + f.subFolder, os.ModePerm)
-		err := ioutil.WriteFile(f.appName+"/" + f.subFolder + f.fileName + ".go", d1, 0644)
+		os.MkdirAll(f.appName+"/"+f.subFolder, os.ModePerm)
+		err := ioutil.WriteFile(f.appName+"/"+f.subFolder+f.fileName+".go", d1, 0644)
 		utils.CheckErr(err)
 	} else {
-		err := ioutil.WriteFile(f.appName+"/" + f.fileName + ".go", d1, 0644)
+		err := ioutil.WriteFile(f.appName+"/"+f.fileName+".go", d1, 0644)
 		utils.CheckErr(err)
 	}
 }
@@ -50,7 +51,7 @@ func main() {
 
 	fmt.Println(*newApp, *generate)
 
-	if utils.CheckNil(*newApp) {
+	if !utils.CheckNil(*newApp) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
 		fmt.Println("\tExample: -new=polls\n ")
