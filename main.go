@@ -24,13 +24,12 @@ type FileParse struct {
 func (f *FileParse) Parse() {
 	path := f.subFolder + f.fileName + ".go"
 
-	fmt.Println("\tCreando...", path)
-
 	strParse := strings.Replace(strs.Paths[path], "appName", f.appName, -1)
 	d1 := []byte(strParse)
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if utils.CheckNil(f.subFolder) {
+		fmt.Println("\tCreando... tu gfas", path)
 		os.MkdirAll(f.appName+"/"+f.subFolder, os.ModePerm)
 		err := ioutil.WriteFile(f.appName+"/"+f.subFolder+f.fileName+".go", d1, 0644)
 		utils.CheckErr(err)

@@ -16,6 +16,5 @@ func CheckErr(err error) {
 
 //CheckNil check if non pointer of a string is null
 func CheckNil(a string) bool {
-	log.Println(a)
 	return len(a) > 0 && a != ""
 }
