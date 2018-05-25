@@ -51,7 +51,7 @@ func main() {
 
 	fmt.Println(*newApp, *generate)
 
-	if !utils.CheckNil(*newApp) {
+	if utils.CheckNil(*newApp) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
 		fmt.Println("\tExample: -new=polls\n ")
@@ -61,7 +61,7 @@ func main() {
 		fmt.Println("Generando proyecto", *newApp)
 	}
 
-	if !utils.CheckNil(*newApp) {
+	if utils.CheckNil(*newApp) {
 		fMain := FileParse{"Main File", *newApp, "", "main", "MainFile"}
 		fMain.Parse()
 
@@ -78,7 +78,7 @@ func main() {
 		fDB.Parse()
 	}
 
-	if !utils.CheckNil(*generate) {
+	if utils.CheckNil(*generate) {
 		switch *generate {
 		case "action":
 			fmt.Println("Escribe el nombre del action: ")
