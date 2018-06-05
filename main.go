@@ -51,10 +51,10 @@ func main() {
 
 	flag.Parse()
 
-	if !utils.CheckNil(*newApp) {
+	if !utils.CheckNil(*newApp) && !utils.CheckNil(*generate) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
-		fmt.Println("\tExample: -new=polls\n ")
+		fmt.Println("\tExample: -new polls\n ")
 
 		flag.PrintDefaults()
 	}
