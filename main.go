@@ -21,6 +21,7 @@ type FileParse struct {
 	strName   string
 }
 
+//Parse parse the files
 func (f *FileParse) Parse() {
 	path := f.subFolder + f.fileName + ".go"
 
@@ -29,7 +30,7 @@ func (f *FileParse) Parse() {
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if utils.CheckNil(f.subFolder) {
-		fmt.Println("\tCreando... tu gfas", path)
+		fmt.Println("\tCreando...", path)
 		os.MkdirAll(f.appName+"/"+f.subFolder, os.ModePerm)
 		err := ioutil.WriteFile(f.appName+"/"+f.subFolder+f.fileName+".go", d1, 0644)
 		utils.CheckErr(err)
@@ -40,6 +41,8 @@ func (f *FileParse) Parse() {
 }
 
 func main() {
+	strs.Init()
+
 	stream := io.Reader(os.Stdin)
 	reader := bufio.NewReader(stream)
 
