@@ -25,7 +25,9 @@ func main() {
 	//db.AutoMigrate(&models.Product{})
 
 	Server.Logger.Fatal(Server.Start(":8080"))
-}`
+}
+
+`
 
 	HomeActions string = `package actions
 
@@ -52,7 +54,9 @@ func HomePut(ctx echo.Context) error {
 //HomeDelete ...
 func HomeDelete(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, "Delete Method")
-}`
+}
+
+`
 	RoutesFile string = `package routes
 
 import (
@@ -68,7 +72,9 @@ func InitRoutes(server *echo.Echo) {
 	server.POST("/api/home/post", actions.HomePost)
 	server.PUT("/api/home/put", actions.HomePut)
 	server.DELETE("/api/home/delete", actions.HomeDelete)
-}`
+}
+
+`
 	UtilsFile string = `package utils
 
 import "log"
@@ -78,7 +84,9 @@ func CheckErr(err error, msg string) {
 	if err != nil {
 		log.Println(err, msg)
 	}
-}`
+}
+
+`
 
 	DBFile string = `package DB
 
@@ -100,7 +108,9 @@ func Open() *gorm.DB {
 	utils.CheckErr(err, "No se puede abrir una conexión")
 
 	return db
-}`
+}
+
+`
 	Action = `package actions
 
 import (
@@ -127,6 +137,7 @@ func appNamePut(ctx echo.Context) error {
 func appNameDelete(ctx echo.Context) error {
 	return ctx.JSON(http.StatusOK, "Delete Method")
 }
+
 	`
 )
 

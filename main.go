@@ -51,16 +51,12 @@ func main() {
 
 	flag.Parse()
 
-	fmt.Println(*newApp, *generate)
-
-	if utils.CheckNil(*newApp) {
+	if !utils.CheckNil(*newApp) {
 		fmt.Println("Echo Framework CLI")
 		fmt.Println("\n\tUsage: -<command>=<value>")
 		fmt.Println("\tExample: -new=polls\n ")
 
 		flag.PrintDefaults()
-	} else {
-		fmt.Println("Generando proyecto", *newApp)
 	}
 
 	if utils.CheckNil(*newApp) {
