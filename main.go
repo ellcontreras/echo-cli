@@ -41,6 +41,7 @@ func (f *FileParse) Parse() {
 }
 
 func main() {
+	//Initializa the Path map to get the string data
 	strs.Init()
 
 	stream := io.Reader(os.Stdin)
@@ -76,6 +77,7 @@ func main() {
 		fDB.Parse()
 	}
 
+	//Check if the generate flag is null or not
 	if utils.CheckNil(*generate) {
 		switch *generate {
 		case "action":
