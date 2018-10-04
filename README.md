@@ -1,15 +1,15 @@
 ![Echo cli gopher](https://github.com/Obsinqsob01/echo-cli/blob/master/Gopher.png)
 
 # echo-cli
-CLI para el framework echo de Golang
+CLI for the framework echo de Golang
 
-## Instalacion
+## Instalation
     go get -u github.com/Obsinqsob01/echo-cli
 
-## Uso
+## Use
 
-    En la terminal corres:
+    Run in terminal:
 	    echo-cli -<command>=<value>
 	    
-		Ejemplo:
+		Example:
 			echo-cli -new=blog
