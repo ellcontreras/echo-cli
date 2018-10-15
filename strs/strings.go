@@ -105,7 +105,7 @@ var (
 //Open return a dastabase instance
 func Open() *gorm.DB {
 	db, err = gorm.Open("mysql", "root:root@/appName")
-	utils.CheckErr(err, "No se puede abrir una conexión")
+	utils.CheckErr(err, "Connection can not be opened")
 
 	return db
 }

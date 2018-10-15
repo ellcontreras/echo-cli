@@ -30,7 +30,7 @@ func (f *FileParse) Parse() {
 	os.MkdirAll(f.appName, os.ModePerm)
 
 	if utils.CheckNil(f.subFolder) {
-		fmt.Println("\tCreando...", path)
+		fmt.Println("\tCreating...", path)
 		os.MkdirAll(f.appName+"/"+f.subFolder, os.ModePerm)
 		err := ioutil.WriteFile(f.appName+"/"+f.subFolder+f.fileName+".go", d1, 0644)
 		utils.CheckErr(err)
@@ -41,7 +41,7 @@ func (f *FileParse) Parse() {
 }
 
 func main() {
-	//Initializa the Path map to get the string data
+	//Initialize the Path map to get the string data
 	strs.Init()
 
 	stream := io.Reader(os.Stdin)
@@ -81,7 +81,7 @@ func main() {
 	if utils.CheckNil(*generate) {
 		switch *generate {
 		case "action":
-			fmt.Println("Escribe el nombre del action: ")
+			fmt.Println("Write the action's name: ")
 			name, err := reader.ReadString('\n')
 			utils.CheckErr(err)
 
